@@ -182,7 +182,7 @@
           charge: '$0.63',
           namehash: 'guest#48557310~u2'
         }
-      ], drawer: false,
+      ],
       witnessData: [
         { id: '1', name: '@kutygee' },
         { id: '2', name: '@thegenius' },
@@ -200,4 +200,5 @@
 </script>
 
 <style>
+  /* The page is set to display in a 3-column view on default. This is done in App.vue */
 </style>

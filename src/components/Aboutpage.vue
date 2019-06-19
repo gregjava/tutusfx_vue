@@ -3,8 +3,8 @@
     <v-container fluid class="row">
       <v-layout mainColumn>
         <v-flex class="card">
-          <v-card class="segment">
-            <h3>About Tutusfx</h3><hr>
+          <v-card class="segment"><br/>
+            <h3>About Tutusfx</h3>
             <span
               v-for="item in articleBody" 
               :key="item.id" 
@@ -92,7 +92,7 @@
           interactions: '9',
           comments: '4'
         }
-      ], drawer: false,
+      ],
       witnessData: [
         { id: '1', name: '@kutygee' },
         { id: '2', name: '@thegenius' },
@@ -104,35 +104,19 @@
         { id: '8', name: '@thegenius' },
         { id: '9', name: '@kutygee' },
         { id: '10', name: '@darkspot' }
-      ],
-      currencyRateData: [
-        { id: '0', rate: '000:0000', name: 'USD/CAD', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'USD/JPY', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'USD/CHF', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'EUR/CHF', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'GBP/USD', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'AUD/USD', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'EUR/USD', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'GBP/CAD', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'GBP/AUD', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'GBP/JPY', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'EUR/GBP', trend: 'positiverate' },
-        { id: '2', rate: '000:0000', name: 'GBP/CHF', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'AUD/CAD', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'CAD/JPY', trend: 'positiverate' },
-        { id: '2', rate: '000:0000', name: 'EUR/CAD', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'CAD/CHF', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'AUD/JPY', trend: 'positiverate' },
-        { id: '2', rate: '000:0000', name: 'EUR/AUD', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'AUD/CHF', trend: '' },
-        { id: '2', rate: '000:0000', name: 'EUR/JPY', trend: 'positiverate' },
-        { id: '2', rate: '000:0000', name: 'CHF/JPY', trend: 'positiverate' },
-        { id: '1', rate: '000:0000', name: 'USD/SGD', trend: 'negativerate' },
-        { id: '2', rate: '000:0000', name: 'USD/NGN', trend: 'positiverate' }
       ]
     })
   }
 </script>
 
 <style>
+  /* Create two unequal columns that floats next to each other */
+  .mainColumn { float: left; width: 65%; padding: 1%; } 
+  .rightColumn { float: left; width: 35%; padding: 1%; }
+
+  /* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
+  @media screen and (max-width: 1200px) {
+    /* Resize columns to fill page */
+    .mainColumn, .rightColumn { width: 100%; padding: 0.5%; }
+  }
 </style>

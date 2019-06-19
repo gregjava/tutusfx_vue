@@ -48,6 +48,7 @@
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
+    
     <v-toolbar
       color="#004300" 
       dark 
@@ -92,32 +93,33 @@
       <v-toolbar-title>Tutusfx</v-toolbar-title>
       <v-toolbar-side-icon @click.stop="drawer = !drawer" />
     </v-toolbar>
-      <v-subheader class="ratebar">
-        <v-flex>
-          <marquee
-            scrolldelay="1s"
-            scrollamount="3"
-          >
+    
+    <v-subheader class="ratebar">
+      <v-flex>
+        <marquee
+          scrolldelay="1s"
+          scrollamount="3"
+        >
+          <span 
+            v-for="item in currencyRateData" 
+            :key="item.id"
+          > {{ item.name }}:
+            <span
+              v-if="item.trend==='positiverate'"
+              class="positiverate"
+            > {{ item.rate }} </span>
             <span 
-              v-for="item in currencyRateData" 
-              :key="item.id"
-            > {{ item.name }}:
-              <span
-                v-if="item.trend==='positiverate'"
-                class="positiverate"
-              > {{ item.rate }} </span>
-              <span 
-                v-else-if="item.trend==='negativerate'" 
-                class="negativerate"
-              > {{ item.rate }} </span>
-              <span 
-                v-else 
-                class="neutralrate"
-              > {{ item.rate }} </span> &nbsp; &nbsp;
-            </span>
-          </marquee>
-        </v-flex>
-      </v-subheader>
+              v-else-if="item.trend==='negativerate'" 
+              class="negativerate"
+            > {{ item.rate }} </span>
+            <span 
+              v-else 
+              class="neutralrate"
+            > {{ item.rate }} </span> &nbsp; &nbsp;
+          </span>
+        </marquee>
+      </v-flex>
+    </v-subheader>
 
     <div>
       <router-view/>
@@ -307,7 +309,7 @@ export default {
         { id: '2', rate: '000:0000', name: 'CHF/JPY', trend: 'positiverate' },
         { id: '1', rate: '000:0000', name: 'USD/SGD', trend: 'negativerate' },
         { id: '2', rate: '000:0000', name: 'USD/NGN', trend: 'positiverate' }
-      ]
+      ], drawer: false
     }
   }
 }
